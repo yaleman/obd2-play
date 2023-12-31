@@ -1,17 +1,15 @@
-import sys
+import click
 
 import obd  # type: ignore
 from loguru import logger
 
+from obd2_play import startup
 
-def main() -> None:
-    logger.info("Starting connection")
-    connection = obd.OBD()
-    if not connection.is_connected():
-        logger.error("Not connected!")
-        sys.exit(1)
-    else:
-        logger.info("Using port {}", connection.port_name())
+
+@click.command()
+@click.option("-d", "--debug", is_flag=True, help="Enable debug logging")
+def main(debug: bool) -> None:
+    connection = startup(debug)
 
     logger.info("Querying Error Codes")
     response = connection.query(obd.commands.GET_DTC)

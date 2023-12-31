@@ -5,6 +5,10 @@ description = ""
 authors = ["James Hodgkinson <james@terminaloutcomes.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+obd2_errors = 'obd2_play.errors:main'
+obd2_stats = 'obd2_play.stats:main'
+
 [tool.poetry.dependencies]
 python = "^3.11"
 obd = "^0.7.2"

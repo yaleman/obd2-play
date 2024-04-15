@@ -10,6 +10,9 @@ from obd2_play import startup
 @click.option("-d", "--debug", is_flag=True, help="Enable debug logging")
 def main(debug: bool) -> None:
     connection = startup(debug)
+    if connection is None:
+        logger.error("Couldn't connect")
+        return
 
     logger.info("Querying Error Codes")
     response = connection.query(obd.commands.GET_DTC)

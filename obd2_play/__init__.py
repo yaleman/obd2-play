@@ -1,9 +1,9 @@
-import sys
-import obd
+from typing import Optional
+import obd  # type: ignore
 from loguru import logger
 
 
-def startup(debug: bool = False) -> obd.OBD:
+def startup(debug: bool = False) -> Optional[obd.OBD]:
     """do startup things"""
     if debug:
         obd.logger.setLevel(obd.logging.DEBUG)
@@ -25,4 +25,4 @@ def startup(debug: bool = False) -> obd.OBD:
             continue
         return connection
     logger.error("Couldn't find port!")
-    sys.exit(1)
+    return None

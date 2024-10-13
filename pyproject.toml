@@ -2,12 +2,14 @@
 name = "obd2-play"
 version = "0.1.0"
 description = ""
-authors = ["James Hodgkinson <james@terminaloutcomes.com>"]
+authors = [
+    "James Hodgkinson <james@terminaloutcomes.com>",
+]
 readme = "README.md"
 
 [tool.poetry.scripts]
-obd2_errors = 'obd2_play.errors:main'
-obd2_stats = 'obd2_play.stats:main'
+obd2_errors = "obd2_play.errors:main"
+obd2_stats = "obd2_play.stats:main"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -15,11 +17,21 @@ obd = "^0.7.2"
 loguru = "^0.7.2"
 click = "^8.1.7"
 
-
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.8.0"
 ruff = "^0.1.9"
 
 [build-system]
-requires = ["poetry-core"]
+requires = [
+    "poetry-core",
+]
 build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "obd2-play"
+description = ""
+version = "0.1.0"
+readme = "README.md"
+authors = [
+    { name = "James Hodgkinson", email = "james@terminaloutcomes.com" },
+]

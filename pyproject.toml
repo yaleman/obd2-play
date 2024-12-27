@@ -13,7 +13,7 @@ obd2_stats = "obd2_play.stats:main"
 python = "^3.11"
 obd = "^0.7.2"
 loguru = "^0.7.3"
-click = "^8.1.7"
+click = "^8.1.8"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.14.0"

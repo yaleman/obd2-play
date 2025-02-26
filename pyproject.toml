@@ -1,32 +1,26 @@
-[tool.poetry]
-name = "obd2-play"
-version = "0.1.0"
-description = ""
-authors = ["James Hodgkinson <james@terminaloutcomes.com>"]
-readme = "README.md"
-
-[tool.poetry.scripts]
-obd2_errors = "obd2_play.errors:main"
-obd2_stats = "obd2_play.stats:main"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-obd = "^0.7.2"
-loguru = "^0.7.3"
-click = "^8.1.8"
-
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.15.0"
-ruff = "^0.9.7"
-pytest = "^8.3.4"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
 [project]
 name = "obd2-play"
 description = ""
 version = "0.1.0"
 readme = "README.md"
 authors = [{ name = "James Hodgkinson", email = "james@terminaloutcomes.com" }]
+requires-python = "<4.0,>=3.11"
+dependencies = [
+    "obd<1.0.0,>=0.7.2",
+    "loguru<1.0.0,>=0.7.2",
+    "click<9.0.0,>=8.1.7",
+]
+
+[project.scripts]
+obd2_errors = "obd2_play.errors:main"
+obd2_stats = "obd2_play.stats:main"
+
+[dependency-groups]
+dev = ["mypy<2.0.0,>=1.12.0", "ruff<1.0.0,>=0.7.0", "pytest<9.0.0,>=8.3.3"]
+
+[tool.pdm.build]
+includes = []
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"

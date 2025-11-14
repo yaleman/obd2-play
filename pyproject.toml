@@ -16,7 +16,7 @@ obd2_errors = "obd2_play.errors:main"
 obd2_stats = "obd2_play.stats:main"
 
 [dependency-groups]
-dev = ["mypy<2.0.0,>=1.12.0", "ruff<1.0.0,>=0.7.0", "pytest<9.0.0,>=8.3.3"]
+dev = ["mypy<2.0.0,>=1.12.0", "ruff<1.0.0,>=0.7.0", "pytest>=8.3.3,<10.0.0"]
 
 [tool.pdm.build]
 includes = []
